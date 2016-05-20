@@ -1,0 +1,26 @@
+{
+  "name": "cpkit",
+  "version": "1.0.0",
+  "description": "cpanel cli",
+  "bin": "./cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luissquall/cpkit.git"
+  },
+  "author": "Luis Ramos <luissquall@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luissquall/cpkit/issues"
+  },
+  "homepage": "https://github.com/luissquall/cpkit#readme",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "lodash": "^4.12.0",
+    "rc": "^1.1.6",
+    "request": "^2.72.0",
+    "yargs": "^4.7.1"
+  }
+}

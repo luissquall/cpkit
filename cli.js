@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+'use strict';
+
+const yargs = require('yargs');
+
+let argv = yargs
+    .usage('Usage: $0 <command>')
+	.command(require('./commands/listemails'))
+	.demand(1, 'must provide a valid command')
+	.help('h')
+	.alias('h', 'help')
+	.argv;
