@@ -5,9 +5,10 @@ const yargs = require('yargs');
 
 let argv = yargs
     .usage('Usage: $0 <command>')
+	.command(require('./commands/listpackages'))
+	.command(require('./commands/listaccounts'))
 	.command(require('./commands/listemails'))
 	.command(require('./commands/listdomains'))
-	.command(require('./commands/listpackages'))
 	.demand(1, 'must provide a valid command')
 	.help('h')
 	.alias('h', 'help')
