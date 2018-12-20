@@ -1,6 +1,6 @@
 'use strict';
 
-const _ = require('lodash');
+const template = require('lodash.template');
 const conf = require('rc')('cpkit');
 
 // Use WHM API to Call cPanel API & UAPI, https://documentation.cpanel.net/pages/viewpage.action?pageId=8159727
@@ -14,7 +14,7 @@ const services = {
 
 exports.get = (key, data) => {
 	if (services[key]) {
-		return _.template(conf.url + services[key])(data);
+		return template(conf.url + services[key])(data);
 	}
 
 	return null;

@@ -1,6 +1,5 @@
 'use strict';
 
-const _ = require('lodash');
 const request = require('request');
 const async = require('async');
 const config = require('rc')('cpkit');
@@ -22,7 +21,7 @@ function onResellersResponse(error, response, body) {
 	} else {
 		if (response.statusCode == 200) {
 			data = body.data;
-			request.get(_.merge({url: services.get('listpkgs')}, reqOptions), onPackagesResponse.bind(null, data.reseller));
+			request.get(Object.assign({url: services.get('listpkgs')}, reqOptions), onPackagesResponse.bind(null, data.reseller));
 		} else {
 			console.error('Error %s on listresellers.', response.statusCode);
 		}
@@ -74,5 +73,5 @@ exports.describe = 'List packages';
 exports.builder = {};
 
 exports.handler = function (argv) {
-	request.get(_.merge({url: services.get('listresellers')}, reqOptions), onResellersResponse);
+	request.get(Object.assign({url: services.get('listresellers')}, reqOptions), onResellersResponse);
 }

@@ -1,6 +1,5 @@
 'use strict';
 
-const _ = require('lodash');
 const request = require('request');
 const async = require('async');
 const config = require('rc')('cpkit');
@@ -26,7 +25,7 @@ function onAccountsResponse(error, response, body) {
 			if (data.acct.length) {
 				async.eachLimit(data.acct, 3, function(account, cb) {
 					let url = services.get('list_domains', account);
-					request.get(_.merge({url: url}, reqOptions), onDomainsResponse.bind(null, account, cb));
+					request.get(Object.assign({url: url}, reqOptions), onDomainsResponse.bind(null, account, cb));
 				});
 			}
 		} else {
@@ -72,5 +71,5 @@ exports.describe = 'List domains';
 exports.builder = {};
 
 exports.handler = function (argv) {
-	request.get(_.merge({url: services.get('listaccts')}, reqOptions), onAccountsResponse);
+	request.get(Object.assign({url: services.get('listaccts')}, reqOptions), onAccountsResponse);
 }
