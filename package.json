@@ -20,7 +20,7 @@
     "async": "^2.0.0-rc.5",
     "lodash.template": "^4.4.0",
     "rc": "^1.1.6",
-    "request": "^2.72.0",
+    "request": "^2.88.0",
     "yargs": "^4.7.1"
   }
 }
